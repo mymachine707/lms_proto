@@ -33,22 +33,21 @@ message GetLocationListResponse{
     repeated Location locations=1;
 }
 
-
-
 message GetLocationByIdRequest{
     string id=1;
 }
 
-
 message UpdateLocationRequest{
-    string id=1;
-    string name=2;
+    string name=1;
 }
+
 message DeleteLocationRequest{
     string id=1;
 }
 
-message DeleteLocationResponse{}
+message DeleteLocationResponse{
+    string status=1;
+}
 
 
 
