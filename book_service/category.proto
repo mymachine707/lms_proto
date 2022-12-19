@@ -33,22 +33,21 @@ message GetCategoryListResponse{
     repeated Category categories=1;
 }
 
-
-
 message GetCategoryByIdRequest{
     string id=1;
 }
 
-
 message UpdateCategoryRequest{
-    string id=1;
     string title=2;
 }
+
 message DeleteCategoryRequest{
     string id=1;
 }
 
-message DeleteCategoryResponse{}
+message DeleteCategoryResponse{
+    string status=1;
+}
 
 
 
