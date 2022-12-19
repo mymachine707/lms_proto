@@ -2,14 +2,10 @@ syntax = "proto3";
 
 option go_package = "./book";
 
-// protos common.proto filedan import qilindi
-import "protos/common.proto";
-
-
 
 // The service definition.
 service CategoryService {
-    rpc Ping (Empty) returns (Pong) {}
+   
     rpc CreateCategory (CreateCategoryRequest) returns (Category) {}
     rpc UpdateCategory (UpdateCategoryRequest) returns (Category) {}
     rpc DeleteCategory (DeleteCategoryRequest) returns (Category) {}
