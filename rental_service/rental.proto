@@ -1,0 +1,67 @@
+syntax="proto3";
+
+option go_package="./rental_service";
+
+service RentalService {
+    rpc CreateRental(CreateRentalRequest) returns (Rental) {}
+    rpc GetRentalList (GetRentalListRequest) returns (GetRentalListResponse){}
+    rpc GetRentalById (GetRentalByIdRequest) returns (Rental){}
+    rpc UpdateRental (UpdateRentalRequest) returns (Rental){}
+    rpc DeleteRental (DeleteRentalRequest) returns (DeleteRentalResponse){}
+}
+
+message Rental {
+    string id = 1;  
+    string book_id = 2;
+    string user_id = 3;
+    string rental_date_time = 4; 
+    string expected_return_date = 5; 
+    string return_date = 6; 
+    string book_fines = 7; 
+    string rental_status = 8; 
+}
+
+message CreateRentalRequest {
+    string book_id = 2;
+    string user_id = 3;
+    string rental_date_time = 4; 
+    string expected_return_date = 5;
+}
+
+message GetRentalListRequest{
+    int32 limit=1;
+    int32 offset=2;
+    string search=3;
+
+}
+
+message GetRentalListResponse{
+    repeated Rental rentals=1;
+}
+
+
+
+message GetRentalByIdRequest{
+    string id=1;
+}
+
+
+message UpdateRentalRequest{
+    string id = 1;  
+    string book_id = 2;
+    string user_id = 3;
+    string rental_date_time = 4; 
+    string expected_return_date = 5; 
+    string return_date = 6; 
+    string book_fines = 7; 
+    string rental_status = 8;
+}
+message DeleteRentalRequest{
+    string id=1;
+}
+
+message DeleteRentalResponse{}
+
+
+
+
