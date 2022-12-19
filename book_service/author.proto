@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "./eCommerce";
+option go_package = "./book";
 
 // protos common.proto filedan import qilindi
 import "protos/common.proto";
