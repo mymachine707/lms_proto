@@ -60,7 +60,9 @@ message DeleteRentalRequest{
     string id=1;
 }
 
-message DeleteRentalResponse{}
+message DeleteRentalResponse{
+    string rental_status = 1; 
+}
 
 
 
