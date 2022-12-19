@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+option go_package = "./book";
+
+
+// The service definition.
+service BookService {
+   
+    rpc CreateBook (CreateBookRequest) returns (Book) {}
+    rpc UpdateBook (UpdateBookRequest) returns (UpdateBookResponse) {}
+    rpc DeleteBook (DeleteBookRequest) returns (DeleteBookResponse) {}
+    rpc GetBookList (GetBookListRequest) returns (GetBookListResponse) {}
+    rpc GetBookById (GetBookByIDRequest) returns (Book) {} 
+}
+
+// Book ...
+message Book { 
+    string id = 1;
+    string name = 2;
+    string author_id = 3;
+    string category_id = 4;
+    string location_id = 5;
+    int32 ISBN =6;
+    int32 quantity =7;
+    string status= 8;
+    string created_at = 9;
+    string updated_at = 10;
+}
+
+message CreateBookRequest{
+    string name = 1;
+    string author_id = 2;
+    string category_id = 3;
+    string location_id = 4;
+    int32 ISBN =5;
+    int32 quantity =6;
+}
+
+
+message UpdateBookRequest{
+    int32 quantity =1;
+}
+
+message UpdateBookResponse{
+    int32 quantity =1;
+    string updated_at = 2;
+}
+
+message DeleteBookRequest{
+    string id = 1;
+}
+
+message DeleteBookResponse{
+    string status = 1;
+}
+
+message GetBookListRequest{
+    int32 offset = 1;
+    int32 limit = 2;
+    string search = 3;
+}
+
+message GetBookListResponse{
+    repeated Book authors = 1;
+}
+
+message GetBookByIDRequest{
+    string id =1;
+}
