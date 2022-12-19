@@ -1,11 +1,10 @@
 syntax = "proto3";
 
-option go_package = "./book";
+option go_package = "./book_service";
 
 
 // The service definition.
 service BookService {
-   
     rpc CreateBook (CreateBookRequest) returns (Book) {}
     rpc UpdateBook (UpdateBookRequest) returns (UpdateBookResponse) {}
     rpc DeleteBook (DeleteBookRequest) returns (DeleteBookResponse) {}
