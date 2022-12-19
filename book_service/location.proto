@@ -1,0 +1,55 @@
+syntax="proto3";
+
+option go_package="./book_service";
+
+service LocationService {
+    rpc CreateLocation(CreateLocationRequest) returns (Location) {}
+    rpc GetLocationList (GetLocationListRequest) returns (GetLocationListResponse){}
+    rpc GetLocationById (GetLocationByIdRequest) returns (Location){}
+    rpc UpdateLocation (UpdateLocationRequest) returns (Location){}
+    rpc DeleteLocation (DeleteLocationRequest) returns (DeleteLocationResponse){}
+}
+
+message Location {
+    string id=1;  
+    string name=2;
+    string status=3;
+    string created_at=4; 
+    string updated_at=5; 
+}
+
+message CreateLocationRequest {
+    string name=1;
+}
+
+message GetLocationListRequest{
+    int32 limit=1;
+    int32 offset=2;
+    string search=3;
+
+}
+
+message GetLocationListResponse{
+    repeated Location locations=1;
+}
+
+
+
+message GetLocationByIdRequest{
+    string id=1;
+}
+
+
+message UpdateLocationRequest{
+    string id=1;
+    string name=2;
+}
+message DeleteLocationRequest{
+    string id=1;
+}
+
+message DeleteLocationResponse{}
+
+
+
+
