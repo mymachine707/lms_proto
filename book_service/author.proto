@@ -25,11 +25,6 @@ message CreateAuthorRequest{
     string name = 2;
 }
 
-
-message UpdateAuthorRequest{
-    string status = 3;
-}
-
 message DeleteAuthorRequest{
     string id = 1;
 }
