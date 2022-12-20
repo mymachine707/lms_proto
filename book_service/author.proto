@@ -8,6 +8,7 @@ service AuthorService {
    
     rpc CreateAuthor (CreateAuthorRequest) returns (Author) {}
     rpc DeleteAuthor (DeleteAuthorRequest) returns (DeleteAuthorResponse) {}
+    rpc EnabledAuthor (DeleteAuthorRequest) returns (DeleteAuthorResponse) {}
     rpc GetAuthorList (GetAuthorListRequest) returns (GetAuthorListResponse) {}
     rpc GetAuthorById (GetAuthorByIDRequest) returns (Author) {} 
 }

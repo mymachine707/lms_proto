@@ -8,6 +8,7 @@ service BookService {
     rpc CreateBook (CreateBookRequest) returns (Book) {}
     rpc UpdateBook (UpdateBookRequest) returns (UpdateBookResponse) {}
     rpc DeleteBook (DeleteBookRequest) returns (DeleteBookResponse) {}
+    rpc EnabledBook (DeleteBookRequest) returns (DeleteBookResponse) {}
     rpc GetBookList (GetBookListRequest) returns (GetBookListResponse) {}
     rpc GetBookById (GetBookByIDRequest) returns (Book) {} 
 }
@@ -44,7 +45,7 @@ message UpdateBookRequest{
 
 message UpdateBookResponse{
     string id = 1;
-    int32 quantity =2;
+    int32 quantity = 2;
     string location_id = 3;
     string updated_at = 4;
 }
