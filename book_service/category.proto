@@ -8,6 +8,7 @@ service CategoryService {
     rpc GetCategoryById (GetCategoryByIdRequest) returns (Category){}
     rpc UpdateCategory (UpdateCategoryRequest) returns (Category){}
     rpc DeleteCategory (DeleteCategoryRequest) returns (DeleteCategoryResponse){}
+    rpc EnabledCategory (DeleteCategoryRequest) returns (DeleteCategoryResponse){}
 }
 
 message Category {
