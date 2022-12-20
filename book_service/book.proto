@@ -60,7 +60,7 @@ message GetBookListRequest{
 }
 
 message GetBookListResponse{
-    repeated Book authors = 1;
+    repeated Book books = 1;
 }
 
 message GetBookByIDRequest{
