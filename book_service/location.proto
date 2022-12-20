@@ -8,7 +8,7 @@ service LocationService {
     rpc GetLocationById (GetLocationByIdRequest) returns (Location){}
     rpc UpdateLocation (UpdateLocationRequest) returns (Location){}
     rpc DeleteLocation (DeleteLocationRequest) returns (DeleteLocationResponse){}
-    rpc EnabledLocation (DeleteLocationRequest) returns (DeleteLocationResponse){}
+    rpc EnabledLocation (EnabledLocationRequest) returns (EnabledLocationResponse){}
 }
 
 message Location {
@@ -47,6 +47,14 @@ message DeleteLocationRequest{
 }
 
 message DeleteLocationResponse{
+    string status=1;
+}
+
+message EnabledLocationRequest{
+    string id=1;
+}
+
+message EnabledLocationResponse{
     string status=1;
 }
 
