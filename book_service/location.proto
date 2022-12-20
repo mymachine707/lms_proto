@@ -26,7 +26,6 @@ message GetLocationListRequest{
     int32 limit=1;
     int32 offset=2;
     string search=3;
-
 }
 
 message GetLocationListResponse{

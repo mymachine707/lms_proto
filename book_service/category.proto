@@ -38,6 +38,7 @@ message GetCategoryByIdRequest{
 }
 
 message UpdateCategoryRequest{
+    string id=1;
     string title=2;
 }
 
