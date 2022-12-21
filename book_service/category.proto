@@ -31,7 +31,7 @@ message GetCategoryListRequest{
 }
 
 message GetCategoryListResponse{
-    repeated Category categories=1;
+    repeated Category category=1;
 }
 
 message GetCategoryByIdRequest{
