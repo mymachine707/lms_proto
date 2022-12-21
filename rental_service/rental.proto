@@ -13,16 +13,18 @@ service RentalService {
 message Rental {
     string id = 1;  
     string book_id = 2;
-    string user_id = 3;
-    string rental_date_time = 4; 
-    string expected_return_date = 5; 
-    string return_date = 6; 
-    string book_fines = 7; 
-    string rental_status = 8; 
+    string book_name = 3;
+    string user_id = 4;
+    string rental_date_time = 5; 
+    string expected_return_date = 6; 
+    string return_date = 7; 
+    string book_fines = 8; 
+    string rental_status = 9; 
 }
 
 message CreateRentalRequest {
-    string book_id = 2;
+    string book_id = 1;
+    string book_name = 2;
     string user_id = 3;
     string rental_date_time = 4; 
     string expected_return_date = 5;
@@ -49,15 +51,17 @@ message GetRentalByIdRequest{
 message UpdateRentalRequest{
     string id = 1;  
     string book_id = 2;
-    string user_id = 3;
-    string rental_date_time = 4; 
-    string expected_return_date = 5; 
-    string return_date = 6; 
-    string book_fines = 7; 
-    string rental_status = 8;
+    string book_name = 3;
+    string user_id = 4;
+    string rental_date_time = 5; 
+    string expected_return_date = 6; 
+    string return_date = 7; 
+    string book_fines = 8; 
+    string rental_status = 9;
 }
 message DeleteRentalRequest{
     string id=1;
+    string rental_status = 2;
 }
 
 message DeleteRentalResponse{
