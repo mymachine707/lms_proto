@@ -8,6 +8,7 @@ service CategoryService {
     rpc GetCategoryById (GetCategoryByIdRequest) returns (Category){}
     rpc UpdateCategory (UpdateCategoryRequest) returns (Category){}
     rpc DeleteCategory (DeleteCategoryRequest) returns (DeleteCategoryResponse){}
+    rpc EnabledCategory (EnabledCategoryRequest) returns (EnabledCategoryResponse){}
 }
 
 message Category {
@@ -30,7 +31,7 @@ message GetCategoryListRequest{
 }
 
 message GetCategoryListResponse{
-    repeated Category categories=1;
+    repeated Category category=1;
 }
 
 message GetCategoryByIdRequest{
@@ -38,6 +39,7 @@ message GetCategoryByIdRequest{
 }
 
 message UpdateCategoryRequest{
+    string id=1;
     string title=2;
 }
 
@@ -46,6 +48,14 @@ message DeleteCategoryRequest{
 }
 
 message DeleteCategoryResponse{
+    string status=1;
+}
+
+message EnabledCategoryRequest{
+    string id=1;
+}
+
+message EnabledCategoryResponse{
     string status=1;
 }
 
